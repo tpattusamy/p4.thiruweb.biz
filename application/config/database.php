@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'root';
-$db['default']['database'] = 'movie_db';
+$db['default']['username'] = 'thiruweb_p4';
+$db['default']['password'] = 'p4_thiruweb';
+$db['default']['database'] = 'thiruweb_p4_thiruweb_biz';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
