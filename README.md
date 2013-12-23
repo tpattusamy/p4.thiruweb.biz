@@ -25,7 +25,7 @@ Delete the exisitng entry.
 
 Database
 
-Database name: movie_db
+Database name: thiruweb_p4_thiruweb_biz
 Tables: Actor
 	Director
 	Movie
