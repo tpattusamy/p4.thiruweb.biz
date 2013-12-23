@@ -1,0 +1,249 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 -- phpMyAdmin SQL Dump\
+-- version 4.0.6\
+-- http://www.phpmyadmin.net\
+--\
+-- Host: localhost\
+-- Generation Time: Dec 23, 2013 at 12:07 AM\
+-- Server version: 5.5.33\
+-- PHP Version: 5.5.3\
+\
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";\
+SET time_zone = "+00:00";\
+\
+--\
+-- Database: `thiruweb_p4_thiruweb_biz`\
+--\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `actor`\
+--\
+\
+CREATE TABLE `actor` (\
+  `a_id` int(11) NOT NULL AUTO_INCREMENT,\
+  `a_name` varchar(50) NOT NULL,\
+  `a_date_of_birth` date NOT NULL,\
+  `a_place_of_birth` varchar(50) NOT NULL,\
+  `a_first_movie` varchar(100) NOT NULL,\
+  `a_language` varchar(20) NOT NULL,\
+  PRIMARY KEY (`a_id`)\
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;\
+\
+--\
+-- Dumping data for table `actor`\
+--\
+\
+INSERT INTO `actor` (`a_id`, `a_name`, `a_date_of_birth`, `a_place_of_birth`, `a_first_movie`, `a_language`) VALUES\
+(1, 'Rajinikanth', '1950-12-12', 'Bangalore, Karnataka', 'Aboorva Raagangal', 'Tamil'),\
+(2, 'Kamalhassan', '1954-11-07', 'Paramakudi, Tamilnadu', 'Kalathoor Kannamma', 'Tamil'),\
+(3, 'Vijayakanth', '1952-08-25', 'Madurai, Tamilnadu', 'Dhoorathu Edi Muzhakkam', 'Tamil'),\
+(4, 'Sivaji Ganesan', '1928-10-01', 'Villupuram, Tamilnadu', 'Parasakthi', 'Tamil'),\
+(5, 'M.G.Ramachandran', '1917-01-17', 'Kandi, Srilanka', 'Sathi leelavathy', 'Tamil'),\
+(6, 'Karthick', '1958-07-08', 'Chennai, Tamilandu', 'Alaigal Oyvadhillai', '0'),\
+(7, 'Ramarajan', '1960-12-09', 'Madurai, Tamilnadu', 'Enga ooru paatukaaran', '0'),\
+(8, 'Ramki', '1965-12-10', 'Tamilnadu', 'Chinna poove mella pesu', '0'),\
+(9, 'Pandiyan', '1962-12-10', 'Theni, Tamilnadu', 'Mann Vaasanai', '0'),\
+(10, 'Thyagarajan', '1955-12-06', 'Salem, Tamilnadu', 'Malayoor Mambattiyan', '0'),\
+(11, 'Siva', '1975-07-09', 'Vellore, Tamilnadu', 'Eeramana Rojave', '0');\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `director`\
+--\
+\
+CREATE TABLE `director` (\
+  `d_id` int(11) NOT NULL AUTO_INCREMENT,\
+  `d_name` varchar(50) NOT NULL,\
+  `d_date_of_birth` date NOT NULL,\
+  `d_place_of_birth` varchar(50) NOT NULL,\
+  `d_first_movie` varchar(50) NOT NULL,\
+  `d_language` varchar(20) NOT NULL,\
+  PRIMARY KEY (`d_id`)\
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;\
+\
+--\
+-- Dumping data for table `director`\
+--\
+\
+INSERT INTO `director` (`d_id`, `d_name`, `d_date_of_birth`, `d_place_of_birth`, `d_first_movie`, `d_language`) VALUES\
+(1, 'K.Balachandar', '1930-07-09', 'Nannilam, Tamilnadu', 'Neerkumizhi', 'Tamil'),\
+(2, 'Maniratnam', '1956-06-02', 'Madurai, Tamilnadu', 'Pagal Nilavu', 'Tamil'),\
+(3, 'Balu Mahendra', '1939-05-20', 'Batticaloa,SL', 'Kokila(Kannada)', 'Tamil'),\
+(4, 'Bharathiraja', '1941-07-17', 'Alli Nagaram, Tamilnadu', '16 Vayathinile', 'Tamil'),\
+(5, 'P.Vasu', '1954-09-15', 'Kerela', 'Panneer Pushpangal', 'Tamil');\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `lyricist`\
+--\
+\
+CREATE TABLE `lyricist` (\
+  `l_id` int(11) NOT NULL AUTO_INCREMENT,\
+  `l_name` varchar(50) NOT NULL,\
+  `l_date_of_birth` date NOT NULL,\
+  `l_place_of_birth` varchar(50) NOT NULL,\
+  `l_first_song` varchar(50) NOT NULL,\
+  `l_language` varchar(20) NOT NULL,\
+  PRIMARY KEY (`l_id`)\
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;\
+\
+--\
+-- Dumping data for table `lyricist`\
+--\
+\
+INSERT INTO `lyricist` (`l_id`, `l_name`, `l_date_of_birth`, `l_place_of_birth`, `l_first_song`, `l_language`) VALUES\
+(1, 'Kannadasan', '1927-06-24', 'Sirukoodalpatti, Tamilnadu', '', 'Tamil'),\
+(2, 'Vairamuthu', '1953-07-13', 'Vadugapatti, Tamilnadu', 'Nizhalgal', 'Tamil'),\
+(3, 'Vaali', '1931-10-29', 'Srirangam, Tamilnadu', '', 'Tamil');\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `movie`\
+--\
+\
+CREATE TABLE `movie` (\
+  `mv_id` int(11) NOT NULL AUTO_INCREMENT,\
+  `mv_title` varchar(50) NOT NULL,\
+  `mv_director` int(11) NOT NULL,\
+  `mv_producer` varchar(50) NOT NULL,\
+  `mv_actor` int(11) NOT NULL,\
+  `mv_music_director` int(11) NOT NULL,\
+  `mv_cinematographer` varchar(50) NOT NULL,\
+  `mv_editor` varchar(50) NOT NULL,\
+  `mv_release_year` char(4) NOT NULL,\
+  `mv_language` varchar(20) NOT NULL,\
+  PRIMARY KEY (`mv_id`),\
+  KEY `mv_director` (`mv_director`),\
+  KEY `mv_music_director` (`mv_music_director`),\
+  KEY `mv_actor` (`mv_actor`)\
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;\
+\
+--\
+-- Dumping data for table `movie`\
+--\
+\
+INSERT INTO `movie` (`mv_id`, `mv_title`, `mv_director`, `mv_producer`, `mv_actor`, `mv_music_director`, `mv_cinematographer`, `mv_editor`, `mv_release_year`, `mv_language`) VALUES\
+(1, '16 Vayathinile', 4, 'Rajkannu', 2, 1, 'P.S.Nivas', 'R.Bhaskaran', '1977', 'Tamil'),\
+(2, 'Nayagan', 2, 'G.Venkateswaran', 2, 1, 'P.C.Sriram', 'Lenin V.T.Vijayan', '1987', 'Tamil'),\
+(3, 'Thalapathy', 2, 'G.Venkateswaran', 1, 1, 'Santhosh Sivan', 'Suresh Urs', '1991', 'Tamil'),\
+(4, 'Ninaithale Inikkum', 1, 'R.Venkatraman', 2, 3, 'B.S.Lokanath', 'N.R.Kittu', '1979', 'Tamil'),\
+(5, 'Mannan', 5, 'Prabhu', 1, 1, 'Ashok Kumar', 'P.Mohanraj', '1992', 'Tamil'),\
+(7, 'Mudhal Mariyadhai', 4, 'Bharathiraja', 4, 1, '', '', '1985', 'Tamil'),\
+(8, 'Sigappu Rojakkal', 4, 'J.Padmavathi', 2, 1, 'P.S.Nivas', 'P.Bhaskaran', '1978', 'Tamil'),\
+(9, 'Moondram Pirai', 3, 'Sathya Jyothi', 2, 1, 'Balu Mahendra', 'D.vasu', '1982', 'Tamil'),\
+(10, 'TamilSelvan', 4, 'KB', 3, 2, 'JJ', 'RR', '1993', 'Tamil'),\
+(11, 'Un Kannil Neer Vazhindhaal', 3, '', 1, 1, '', '', '1985', 'Tamil'),\
+(12, 'Unnal Mudiyum Thambi', 1, 'Kavithalaya', 2, 1, 'Ashok Kumar', '', '1989', 'Tamil');\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `music_director`\
+--\
+\
+CREATE TABLE `music_director` (\
+  `m_id` int(11) NOT NULL AUTO_INCREMENT,\
+  `m_name` varchar(50) NOT NULL,\
+  `m_date_of_birth` date NOT NULL,\
+  `m_place_of_birth` varchar(50) NOT NULL,\
+  `m_first_movie` varchar(50) NOT NULL,\
+  `m_language` varchar(20) NOT NULL,\
+  PRIMARY KEY (`m_id`)\
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;\
+\
+--\
+-- Dumping data for table `music_director`\
+--\
+\
+INSERT INTO `music_director` (`m_id`, `m_name`, `m_date_of_birth`, `m_place_of_birth`, `m_first_movie`, `m_language`) VALUES\
+(1, 'Ilayaraja', '1943-06-02', 'Pannaipuram, Tamilnadu', 'Annakili', 'Tamil'),\
+(2, 'A.R.Rahman', '1966-01-06', 'Chennai, Tamilnadu', 'Roja', 'Tamil'),\
+(3, 'M.S.Viswanathan', '1928-06-24', 'Palakkad, Kerela', '', 'Tamil');\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `singer`\
+--\
+\
+CREATE TABLE `singer` (\
+  `s_id` int(11) NOT NULL AUTO_INCREMENT,\
+  `s_name` varchar(50) NOT NULL,\
+  `s_date_of_birth` date NOT NULL,\
+  `s_place_of_birth` varchar(50) NOT NULL,\
+  `s_first_song` varchar(50) NOT NULL,\
+  `s_language` varchar(20) NOT NULL,\
+  PRIMARY KEY (`s_id`)\
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;\
+\
+--\
+-- Dumping data for table `singer`\
+--\
+\
+INSERT INTO `singer` (`s_id`, `s_name`, `s_date_of_birth`, `s_place_of_birth`, `s_first_song`, `s_language`) VALUES\
+(1, 'S.P.Balasubramaniam', '1946-06-04', 'Konetammapeta, Andhra Pradesh', 'Aayiram Nilave va', 'Tamil'),\
+(2, 'K.J.Yesudas', '1940-01-10', 'Cochin, Kerela', 'Mala', 'Tamil'),\
+(3, 'Malaysia Vasudevan', '1944-06-15', 'Chennai, Tamilnadu', '', 'Tamil'),\
+(4, 'Mano', '1965-10-26', 'Vijayawada', '', '0');\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `songs`\
+--\
+\
+CREATE TABLE `songs` (\
+  `so_id` int(11) NOT NULL AUTO_INCREMENT,\
+  `so_title` varchar(50) NOT NULL,\
+  `so_singer1` int(11) NOT NULL,\
+  `so_singer2` int(11) NOT NULL,\
+  `so_movie` varchar(50) NOT NULL,\
+  `so_lyrics` int(11) NOT NULL,\
+  `so_language` varchar(20) NOT NULL,\
+  PRIMARY KEY (`so_id`),\
+  KEY `so_lyrics` (`so_lyrics`),\
+  KEY `so_singer1` (`so_singer1`),\
+  KEY `so_singer2` (`so_singer2`)\
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;\
+\
+--\
+-- Dumping data for table `songs`\
+--\
+\
+INSERT INTO `songs` (`so_id`, `so_title`, `so_singer1`, `so_singer2`, `so_movie`, `so_lyrics`, `so_language`) VALUES\
+(2, 'Poongatru Thirumbuma', 3, 3, 'Mudhal Mariyadhai', 2, 'Tamil'),\
+(3, 'Sundari Kannal oru sedhi', 1, 1, 'Thalapathy', 3, 'Tamil'),\
+(4, 'Kanne Kalaimane', 1, 1, 'Moondram Pirai', 1, 'Tamil'),\
+(5, 'Amma endrazhaikadha Uyir Illaye', 2, 4, 'Mannan', 3, 'Tamil'),\
+(6, 'Idhazhil Kadhai ezhudhum', 1, 1, 'Unnal Muidyum Thambi', 3, 'Tamil'),\
+(7, 'Punjai Undu', 1, 1, 'Unnal Muidyum Thambi', 2, 'Tamil');\
+\
+--\
+-- Constraints for dumped tables\
+--\
+\
+--\
+-- Constraints for table `movie`\
+--\
+ALTER TABLE `movie`\
+  ADD CONSTRAINT `movie_ibfk_1` FOREIGN KEY (`mv_director`) REFERENCES `director` (`d_id`),\
+  ADD CONSTRAINT `movie_ibfk_2` FOREIGN KEY (`mv_music_director`) REFERENCES `music_director` (`m_id`),\
+  ADD CONSTRAINT `movie_ibfk_3` FOREIGN KEY (`mv_actor`) REFERENCES `actor` (`a_id`);\
+\
+--\
+-- Constraints for table `songs`\
+--\
+ALTER TABLE `songs`\
+  ADD CONSTRAINT `songs_ibfk_1` FOREIGN KEY (`so_lyrics`) REFERENCES `lyricist` (`l_id`),\
+  ADD CONSTRAINT `songs_ibfk_2` FOREIGN KEY (`so_singer1`) REFERENCES `singer` (`s_id`);\
+}
